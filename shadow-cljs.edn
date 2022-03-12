@@ -1,16 +1,15 @@
 ;; shadow-cljs configuration
-{:source-paths
- ["src/dev"
-  "src/main"
-  "src/test"]
-
- :dependencies
- []
+{:deps {:aliases [:cljs]}
 
  :dev-http
  {8080 "public"}
 
  :builds
  {:frontend
-  {:target :browser
-   :modules {:main {:init-fn codes.pedromanoel.frontend.app/init}}}}}
+  {:target  :browser
+   :modules {:main {:init-fn codes.pedromanoel.frontend.app/init}}}
+
+  :test
+  {:target :karma
+   :output-to "public/js/test.js"
+   :ns-regexp "-spec$"}}}

@@ -1,0 +1,6 @@
+{:deps    {}
+ :paths   ["src/main"]
+ :aliases {:test        {:extra-paths ["src/test"]}
+           :cljs        {:extra-deps {thheller/shadow-cljs {:mvn/version "2.17.8"}}}
+           :shadow-cljs {:extra-deps {thheller/shadow-cljs {:mvn/version "2.17.8"}}
+                         :main-opts ["-m" "shadow.cljs.devtools.cli"]}}}
